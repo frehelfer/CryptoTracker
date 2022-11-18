@@ -22,10 +22,15 @@ struct CoinRowView: View {
                 .frame(minWidth: 30)
             CoinImageView(coin: coin)
                 .frame(width: 30, height: 30)
-            Text(coin.symbol.uppercased())
-                .font(.headline)
-                .padding(.leading, 6)
-                .foregroundColor(.theme.accent)
+            VStack(alignment: .leading) {
+                Text(coin.symbol.uppercased())
+                    .font(.headline)
+                    .foregroundColor(.theme.accent)
+                Text(coin.name)
+                    .font(.caption)
+                    .foregroundColor(.theme.secondaryText)
+            }
+            .padding(.leading, 15)
             
             Spacer()
             
