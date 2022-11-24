@@ -108,7 +108,7 @@ import Foundation
  
  */
 
-struct CoinDetail: Codable {
+struct CoinDetail: Identifiable, Codable {
     let id, symbol, name: String?
     let blockTimeInMinutes: Int?
     let hashingAlgorithm: String?

@@ -86,17 +86,15 @@ extension HomeView {
     }
     
     private var allCoinsList: some View {
-        List {
-            ForEach(vm.allCoins) { coin in
-                NavigationLink(value: coin) {
-                    CoinRowView(coin: coin, showHoldingsColumn: false)
-                        .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
-                }
+        List(vm.allCoins) { coin in
+            NavigationLink(value: coin) {
+                CoinRowView(coin: coin, showHoldingsColumn: false)
+                    .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
             }
         }
-        .navigationDestination(for: Coin.self, destination: { coin in
+        .navigationDestination(for: Coin.self) { coin in
             DetailView(coin: coin)
-        })
+        }
         .listStyle(.plain)
         .refreshable {
             vm.reloadData()
