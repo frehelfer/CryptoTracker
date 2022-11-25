@@ -43,6 +43,8 @@
 		0C64D81D2928055D0019B42E /* PortfolioContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0C64D81B2928055D0019B42E /* PortfolioContainer.xcdatamodeld */; };
 		0C64D81F2928061C0019B42E /* PortfolioDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C64D81E2928061C0019B42E /* PortfolioDataService.swift */; };
 		0CA5261A292F9DE600E58C52 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA52619292F9DE600E58C52 /* DetailView.swift */; };
+		0CEAF8D5293142FB005DD4B6 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CEAF8D4293142FB005DD4B6 /* ChartView.swift */; };
+		0CEAF8D729314B36005DD4B6 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CEAF8D629314B36005DD4B6 /* Date.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +85,8 @@
 		0C64D81C2928055D0019B42E /* PortfolioContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PortfolioContainer.xcdatamodel; sourceTree = "<group>"; };
 		0C64D81E2928061C0019B42E /* PortfolioDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioDataService.swift; sourceTree = "<group>"; };
 		0CA52619292F9DE600E58C52 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		0CEAF8D4293142FB005DD4B6 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		0CEAF8D629314B36005DD4B6 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +148,7 @@
 				0C1C326429257848007FB564 /* Double.swift */,
 				0C64D8172927CEAE0019B42E /* String.swift */,
 				0C64D8192928017C0019B42E /* UIApplication.swift */,
+				0CEAF8D629314B36005DD4B6 /* Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -263,6 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				0CA52619292F9DE600E58C52 /* DetailView.swift */,
+				0CEAF8D4293142FB005DD4B6 /* ChartView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -348,9 +354,11 @@
 				0C64D7ED2926E2320019B42E /* Statistic.swift in Sources */,
 				0C64D7F52926FACA0019B42E /* MarketDataService.swift in Sources */,
 				0C64D8162927B51F0019B42E /* CoinLogoView.swift in Sources */,
+				0CEAF8D5293142FB005DD4B6 /* ChartView.swift in Sources */,
 				0C64D8182927CEAE0019B42E /* String.swift in Sources */,
 				0C64D7EF2926E3C30019B42E /* StatisticView.swift in Sources */,
 				0C1C326A2925A158007FB564 /* CoinDataService.swift in Sources */,
+				0CEAF8D729314B36005DD4B6 /* Date.swift in Sources */,
 				0C1C324229252BE9007FB564 /* ContentView.swift in Sources */,
 				0C267BA3292FAE5000874F95 /* CoinDetail.swift in Sources */,
 				0C1C3267292584DE007FB564 /* HomeViewModel.swift in Sources */,
