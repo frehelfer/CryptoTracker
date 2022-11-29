@@ -10,7 +10,8 @@ import SwiftUI
 struct HomeView: View {
     @EnvironmentObject private var vm: HomeViewModel
     @State private var showPortfolio: Bool = false // animate right
-    @State private var showPortfolioView: Bool = false // new sheet
+    @State private var showPortfolioView: Bool = false // portfolio sheet
+    @State private var showSettingsView: Bool = false // settings sheet
     
     var body: some View {
         ZStack {
@@ -30,14 +31,23 @@ struct HomeView: View {
                     allCoinsList
                         .transition(.move(edge: .leading))
                 } else {
-                    portfolioCoinsList
-                        .transition(.move(edge: .trailing))
+                    ZStack(alignment: .top) {
+                        if vm.portfolioCoins.isEmpty && vm.searchText.isEmpty {
+                            portfolioEmptyText
+                        } else {
+                            portfolioCoinsList
+                        }
+                    }
+                    .transition(.move(edge: .trailing))
                 }
                 
                 Spacer(minLength: 0)
             }
             .sheet(isPresented: $showPortfolioView) {
                 PortfolioView()
+            }
+            .sheet(isPresented: $showSettingsView) {
+                SettingsView()
             }
         }
     }
@@ -62,6 +72,8 @@ extension HomeView {
                 .onTapGesture {
                     if showPortfolio {
                         showPortfolioView.toggle()
+                    } else {
+                        showSettingsView.toggle()
                     }
                 }
                 .background {
@@ -90,6 +102,7 @@ extension HomeView {
             NavigationLink(value: coin) {
                 CoinRowView(coin: coin, showHoldingsColumn: false)
                     .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
+                    .listRowBackground(Color.theme.background)
             }
         }
         .navigationDestination(for: Coin.self) { coin in
@@ -106,12 +119,22 @@ extension HomeView {
             ForEach(vm.portfolioCoins) { coin in
                 CoinRowView(coin: coin, showHoldingsColumn: true)
                     .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
+                    .listRowBackground(Color.theme.background)
             }
         }
         .listStyle(.plain)
         .refreshable {
             vm.reloadData()
         }
+    }
+    
+    private var portfolioEmptyText: some View {
+        Text("You haven't added any coins to your portfolio yet! Click the + button to get started! 🧐")
+            .font(.callout)
+            .foregroundColor(.theme.accent)
+            .fontWeight(.medium)
+            .multilineTextAlignment(.center)
+            .padding(50)
     }
     
     private var columnsTitles: some View {

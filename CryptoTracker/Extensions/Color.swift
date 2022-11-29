@@ -10,6 +10,7 @@ import SwiftUI
 
 extension Color {
     static let theme = ColorTheme()
+    static let launch = LaunchTheme()
 }
 
 // TODO: Add on settings page the option for the user to choose the ColorTheme.
@@ -25,4 +26,9 @@ struct ColorTheme {
     let green = Color("GreenColor")
     let red = Color("RedColor")
     let secondaryText = Color("SecondaryTextColor")
+}
+
+struct LaunchTheme {
+    let accent = Color("LaunchAccentColor")
+    let background = Color("LaunchBackgroundColor")
 }
